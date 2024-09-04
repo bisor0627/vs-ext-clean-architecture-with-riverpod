@@ -5,8 +5,12 @@
   "version": "1.0.0",
   "icon": "images/icon.png",
   "publisher": "biso",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bisor0627/vs-ext-clean-architecture-with-riverpod.git"
+  },
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.92.0"
   },
   "categories": [
     "Other"
