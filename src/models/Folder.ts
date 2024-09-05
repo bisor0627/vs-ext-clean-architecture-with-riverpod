@@ -1,10 +1,11 @@
 export const folders = [
-    'data/models',
     'data/repositories',
+    'data/dtos',
     'data/sources',
+    'domain/repositories',
     'domain/entities',
     'domain/usecases',
-    'presentation/provider',
+    'presentation/providers',
     'presentation/screens',
     'presentation/widgets'
 ];

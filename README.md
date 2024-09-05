@@ -17,28 +17,32 @@
 ## 생성되는 폴더 및 파일 구조
 
 ```
-$feature/
-├── data/
-│   ├── models/
-│   │   └── $feature_model.dart
-│   ├── repositories/
-│   │   └── $feature_repository.dart
-│   └── sources/
-│       └── $feature_source.dart
-├── domain/
-│   ├── controller/
-│   │   └── $feature_controller.dart
-│   ├── entities/
-│   │   └── $feature_entity.dart
-│   └── usecases/
-│       └── $feature_usecase.dart
-└── presentation/
-    ├── provider/
-    │   └── $feature_provider.dart
-    ├── screens/
-    │   └── $feature_screen.dart
-    └── widgets/
-        └── $feature_widget.dart
+lib/
+└── core/
+└── features/
+    ├── ${feature}/
+    │   ├── domain/
+    │   │   ├── entities/
+    │   │   │   └── ${feature}_entity.dart
+    │   │   ├── repositories/
+    │   │   │   └── ${feature}_repository_contract.dart
+    │   │   ├── usecases/
+    │   │       └── ${feature}_usecase.dart
+    │   ├── data/
+    │   │   ├── dtos/
+    │   │   │   └── ${feature}_request.dart
+    │   │   │   └── ${feature}_response.dart
+    │   │   ├── repositories/
+    │   │   │   └── ${feature}_repository.dart
+    │   │   └── sources/
+    │   │       └── ${feature}_source.dart
+    │   ├── presentation/
+    │       ├── providers/
+    │       │   └── ${feature}_provider.dart
+    │       ├── screens/
+    │       │   └── ${feature}_screen.dart
+    │       └── widgets/
+    │           └── ${feature}_widget.dart
 ```
 
 ### 파일 생성 안내
@@ -46,10 +50,6 @@ $feature/
 - **자동 생성된 파일**: 각 폴더에는 `$feature` 이름을 기반으로 한 Dart 파일들이 생성됩니다.
 - **템플릿 포함**: 각 파일에는 Riverpod과 클린 아키텍처를 반영한 기본 템플릿이 포함됩니다. 예를 들어, `StatelessWidget`을 사용하는 파일에는 `import 'package:flutter/material.dart';`가 자동으로 추가됩니다.
 
-## 커스터마이징
-
-폴더 구조나 파일 템플릿을 수정하고 싶다면, `StructureData.ts` 파일을 편집하여 원하는 방식으로 커스터마이징할 수 있습니다.
-
 ## 라이선스
 
-이 프로젝트는 MIT 라이선스에 따라 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+이 프로젝트는 Apache License에 따라 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
