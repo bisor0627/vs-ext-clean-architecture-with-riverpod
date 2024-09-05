@@ -25,7 +25,7 @@ lib/
     │   │   ├── entities/
     │   │   │   └── ${feature}_entity.dart
     │   │   ├── repositories/
-    │   │   │   └── ${feature}_repository_contract.dart
+    │   │   │   └── ${feature}_repository.dart
     │   │   ├── usecases/
     │   │       └── ${feature}_usecase.dart
     │   ├── data/
@@ -33,7 +33,7 @@ lib/
     │   │   │   └── ${feature}_request.dart
     │   │   │   └── ${feature}_response.dart
     │   │   ├── repositories/
-    │   │   │   └── ${feature}_repository.dart
+    │   │   │   └── ${feature}_repository_impl.dart
     │   │   └── sources/
     │   │       └── ${feature}_source.dart
     │   ├── presentation/
