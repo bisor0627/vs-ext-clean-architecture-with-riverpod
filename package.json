@@ -2,7 +2,7 @@
   "name": "clean-architecture-with-riverpod",
   "displayName": "Clean Architecture with Riverpod",
   "description": "Flutter 프로젝트를 위한 간단한 Clean Architecture 및 Riverpod 구조 자동 생성 확장",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "icon": "images/icon.png",
   "publisher": "biso",
   "repository": {

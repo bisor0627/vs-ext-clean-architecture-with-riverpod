@@ -1,10 +1,10 @@
-
 import * as path from 'path';
 import * as vscode from 'vscode';
 import { toPascalCase, toSnakeCase } from '../utils/capitalize';
 import { createFileStructure } from './createFileStructure';
+
 // 폴더 구조를 생성하는 메인 함수
-export function createFeatureFolderStructure() {
+export function createFeatureFolderStructure(uri: vscode.Uri) {
     const options: vscode.InputBoxOptions = {
         prompt: "Enter the feature name:",
         placeHolder: "feature_name"
@@ -24,15 +24,14 @@ export function createFeatureFolderStructure() {
 
         const snakeCaseName = toSnakeCase(rawFeatureName);
         const classNamePrefix = toPascalCase(rawFeatureName);
-        //rootPath is deprecated
-        const rootPath = vscode.workspace.workspaceFolders?.[0].uri.fsPath;
 
-        if (!rootPath) {
-            vscode.window.showErrorMessage("No workspace is opened.");
+        if (!uri) {
+            vscode.window.showErrorMessage("No folder selected.");
             return;
         }
 
-        const featurePath = path.join(rootPath, snakeCaseName);
+        // Use the path where the user right-clicked (uri.fsPath)
+        const featurePath = path.join(uri.fsPath, snakeCaseName);
 
         createFileStructure(featurePath, snakeCaseName, classNamePrefix);
 

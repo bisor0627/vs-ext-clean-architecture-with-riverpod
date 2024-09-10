@@ -3,11 +3,10 @@ import { createFeatureFolderStructure } from './commands/createFeatureFolderStru
 
 // 확장 프로그램 활성화 시 등록되는 명령어
 export function activate(context: vscode.ExtensionContext) {
-    let disposable = vscode.commands.registerCommand('extension.createFolderTree', createFeatureFolderStructure);
+    let disposable = vscode.commands.registerCommand('extension.createFolderTree', (uri: vscode.Uri) => {
+        createFeatureFolderStructure(uri);  // Pass the uri here
+    });
     context.subscriptions.push(disposable);
 }
 
 export function deactivate() {}
-
-
-
